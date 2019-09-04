@@ -6,6 +6,7 @@ import android.arch.lifecycle.ViewModelProvider
 import android.michealcob.kol.coordinator.Navigator
 import android.michealcob.kol.coordinator.RootFlowCoordinator
 import android.michealcob.kol.coordinator.SplashFlowCoordinator
+import android.michealcob.kol.views.register.RegisterViewModel
 import android.michealcob.kol.views.splash.SplashViewModel
 
 class AppViewModelFactory(application : Application) : ViewModelProvider.Factory {
@@ -27,7 +28,7 @@ class AppViewModelFactory(application : Application) : ViewModelProvider.Factory
             SplashViewModel::class.java -> SplashViewModel(
                 onWelcomeClicked = splashCoordinator::start
             )
-
+            RegisterViewModel::class.java -> RegisterViewModel()
         else -> throw IllegalArgumentException("No ViewModel registered for $modelClass")
     } as T
 }

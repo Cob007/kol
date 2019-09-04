@@ -1,5 +1,6 @@
 package android.michealcob.kol
 
+import android.content.Context
 import android.michealcob.kol.utils.navigator
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -9,14 +10,24 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 class MainActivity : AppCompatActivity() {
 
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        CalligraphyConfig.initDefault(CalligraphyConfig.Builder()
+            .setDefaultFontPath("fonts/OpenSans-Regular.ttf")
+            .setFontAttrId(R.attr.fontPath)
+            .build()
+        )
         setContentView(R.layout.activity_main)
-
-        navigator.activty
+        navigator.activty = this
     }
 
     override fun onDestroy() {

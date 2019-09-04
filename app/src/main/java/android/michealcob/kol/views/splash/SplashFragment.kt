@@ -9,10 +9,13 @@ import android.view.ViewGroup
 
 import android.michealcob.kol.R
 import android.michealcob.kol.utils.getViewModel
+import android.os.Handler
 import kotlinx.android.synthetic.main.fragment_splash.*
 
 
 class SplashFragment : Fragment() {
+
+    private val SPLASH_TIME_OUT:Long=3000
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,9 +30,13 @@ class SplashFragment : Fragment() {
 
         val vm : SplashViewModel = getViewModel()
 
-        welcome.setOnClickListener {
+        Handler().postDelayed({
             vm.welcome()
-        }
+        }, SPLASH_TIME_OUT)
+
+        /*welcome.setOnClickListener {
+            vm.welcome()
+        }*/
     }
 
 

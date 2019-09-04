@@ -3,13 +3,22 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+             android:background="#ffffff"
              tools:context=".views.splash.SplashFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:id="@+id/welcome"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+    <ImageView
+            android:layout_width="223dp"
+            android:layout_height="236dp"
+            android:src="@drawable/app_logo"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="150dp"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+    android:text="@string/powered_by_unidots"
+    android:layout_gravity="bottom|center"
+    android:layout_marginBottom="10dp"
+    android:textColor="#424242"/>
 
 </FrameLayout>

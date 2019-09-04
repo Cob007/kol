@@ -8,7 +8,7 @@ class SplashFlowCoordinator(
      *
      *****************************************/
     fun start(){
-        navigator.showLogin()
+        navigator.showRegister()
     }
     /**************
      * that's all
